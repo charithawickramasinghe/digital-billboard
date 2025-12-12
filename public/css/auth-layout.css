@@ -1,0 +1,30 @@
+body {
+    height: 100vh;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+}
+.login-card {
+    max-width: 400px;
+    width: 100%;
+}
+.login-card button {
+    width: 100%;
+    padding: 12px;
+    background: #7494ec;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transform: 0.5s;
+}
+button:hover {
+    background: #6884d3;
+}
+.login-card h2 {
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #625a5a;
+    text-align: center;
+}

@@ -1,0 +1,16 @@
+.canvas-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    border: 1px solid #ddd;
+    white-space: nowrap;
+}
+
+#responsive-canvas {
+    display: block;
+    width: 1920px;
+    height: 1080px;
+    border: 1px solid black;
+    /*width: 100%;*/
+    /*height: auto;*/
+}
