@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\BillboardController;
 use App\Http\Controllers\LoginController;
-use Symfony\Component\HttpFoundation\Session\Session;
+use App\Http\Controllers\PasswordResetController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\MenuCardController;
@@ -48,3 +48,9 @@ Route::post('login', LoginController::class)->name('login.attempt');
 
 Route::get('/menucard', [MenuCardController::class, 'index']);
 Route::post('/menucard/save', [MenuCardController::class, 'save'])->name('menucard.save');
+
+// Password Reset Routes
+Route::middleware('auth')->group(function () {
+    Route::get('/password-reset', [PasswordResetController::class, 'show'])->name('password-reset.show');
+    Route::post('/password-reset', [PasswordResetController::class, 'update'])->name('password-reset.update');
+});
