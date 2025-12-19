@@ -12,6 +12,13 @@
          </a>
       </li>
 
+      <!-- Companies -->
+      <li>
+         <a href="{{ route('companies.index') }}" class="nav-link text-white">
+            <i class="bi bi-building"></i> Companies
+         </a>
+      </li>
+
       <!-- Billboards Menu -->
       <li class="nav-item">
          <a class="nav-link text-white d-flex justify-content-between"

@@ -8,6 +8,7 @@ use App\Http\Controllers\PasswordResetController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\MenuCardController;
+use App\Http\Controllers\CompanyController;
 
 Route::get('/', function () {
     return view('login');
@@ -53,4 +54,14 @@ Route::post('/menucard/save', [MenuCardController::class, 'save'])->name('menuca
 Route::middleware('auth')->group(function () {
     Route::get('/password-reset', [PasswordResetController::class, 'show'])->name('password-reset.show');
     Route::post('/password-reset', [PasswordResetController::class, 'update'])->name('password-reset.update');
+});
+
+// Company Routes
+Route::middleware('auth')->group(function () {
+    Route::get('/companies', [CompanyController::class, 'index'])->name('companies.index');
+    Route::get('/companies/create', [CompanyController::class, 'create'])->name('companies.create');
+    Route::post('/companies', [CompanyController::class, 'store'])->name('companies.store');
+    Route::get('/companies/{company}/edit', [CompanyController::class, 'edit'])->name('companies.edit');
+    Route::put('/companies/{company}', [CompanyController::class, 'update'])->name('companies.update');
+    Route::delete('/companies/{company}', [CompanyController::class, 'destroy'])->name('companies.destroy');
 });
