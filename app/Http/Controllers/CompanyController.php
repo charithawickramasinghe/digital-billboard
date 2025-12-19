@@ -12,7 +12,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $companies = Company::where('user_id', auth()->id())->get();
+        $companies = Company::all();
         return view('companies.index', compact('companies'));
     }
 
@@ -41,7 +41,6 @@ class CompanyController extends Controller
             'status' => 'required|integer|in:0,1',
         ]);
 
-        $validated['user_id'] = auth()->id();
         Company::create($validated);
 
         return redirect()->route('companies.index')->with('success', 'Company created successfully!');
