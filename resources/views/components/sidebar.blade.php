@@ -19,6 +19,13 @@
          </a>
       </li>
 
+      <!-- Users -->
+      <li>
+         <a href="{{ route('users.index') }}" class="nav-link text-white">
+            <i class="bi bi-people"></i> Users
+         </a>
+      </li>
+
       <!-- Billboards Menu -->
       <li class="nav-item">
          <a class="nav-link text-white d-flex justify-content-between"

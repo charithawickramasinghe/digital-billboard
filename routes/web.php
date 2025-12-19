@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\MenuCardController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('login');
@@ -64,4 +65,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/companies/{company}/edit', [CompanyController::class, 'edit'])->name('companies.edit');
     Route::put('/companies/{company}', [CompanyController::class, 'update'])->name('companies.update');
     Route::delete('/companies/{company}', [CompanyController::class, 'destroy'])->name('companies.destroy');
+    
+    // User Routes
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+    Route::post('/users', [UserController::class, 'store'])->name('users.store');
+    Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 });
